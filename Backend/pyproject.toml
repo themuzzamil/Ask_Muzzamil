@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "flash-ai"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.30.6"
+google-generativeai = "^0.8.1"
+ipython = "^8.27.0"
+pathlib = "^1.0.1"
+sqlmodel = "^0.0.22"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
