@@ -1,5 +1,6 @@
 'use client'; // Ensure this is at the top for client components
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const Chat = () => {
   const [input, setInput] = useState('');
@@ -51,15 +52,18 @@ const Chat = () => {
         />
         <button type="submit" className="btn bg-blue-500 text-white rounded py-2 hover:bg-blue-600">Send</button>
       </form>
-      <div className="mt-4">
-        {messages.map((message, index) => (
-          <div key={index} className="mb-2">
-            <p className="font-semibold">You:</p>
-            <p>{message.user}</p>
-            <p className="font-semibold">Bot:</p>
-            <p>{message.bot}</p>
-          </div>
-        ))}
+      <div className="space-y-4 mb-6">
+          {messages.map((message, index) => (
+            <div key={index} className="chat-message">
+              <p className="text-gray-600">
+                <strong className="text-blue-500">You:</strong> {message.user}
+              </p>
+              <p className="text-gray-600">
+                <strong className="text-green-500">Bot:</strong>
+                <ReactMarkdown className="prose">{message.bot}</ReactMarkdown>
+              </p>
+            </div>
+          ))}
       </div>
     </div>
   );
